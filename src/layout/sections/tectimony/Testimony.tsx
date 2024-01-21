@@ -5,11 +5,13 @@ import { Icon } from '../../../componenets/icon/Icon'
 import { Slider } from '../../../componenets/slider/Slider'
 import { FlexWrapper } from '../../../componenets/FlexWrapper'
 import { IconWrapper } from '../skills/skill/Skill'
+import { Container } from '../../../componenets/Container'
 
 
 export const Testimony = () => {
     return (
         <StyledTestimony>
+            <Container>
             <SectionTitle>Testimony</SectionTitle>
             <FlexWrapper direction={"column"} align={"center"}>
             <IconWrapper>
@@ -17,8 +19,9 @@ export const Testimony = () => {
             </IconWrapper>
             <Slider/>
             </FlexWrapper>
-        
+        </Container>
         </StyledTestimony>
+        
     )
 }
 

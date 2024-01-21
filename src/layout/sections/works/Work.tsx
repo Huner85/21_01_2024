@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { theme } from '../../../styles/Theme'
 
 type WorkPropsType = {
     title: string
@@ -19,9 +20,15 @@ export const Work = (props: WorkPropsType) => {
     )
 }
 const StyledWork = styled.div`
-    background-color: #ffe869;
+    background-color: ${theme.colors.secondaryBg};
     max-width: 540px;
-    width: 100%;
+    width: 330px;
+    flex-grow: 1;  
+    
+@media ${theme.media.desktop} {
+    max-width: 540px;
+}
+
 `
 
 const Image = styled.img`
@@ -31,6 +38,7 @@ const Image = styled.img`
 `
 const Link = styled.a`
     gap: 20px;
+
 `
 
 const Title = styled.h3`

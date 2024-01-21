@@ -47,6 +47,8 @@ const StyledFooter = styled.footer`
 const Name = styled.span`
     font-family: "Josefin Sans", sans-serif;
     font-size: 22px;
+
+    @media ${theme.media.mobile}
 `
 const SocialList = styled.ul`
     display: flex;
@@ -63,6 +65,11 @@ justify-content: center;
 align-items: center;
 
 color: ${theme.colors.accent};
+
+&:hover {
+    color: ${theme.colors.primaryBg};
+    transform: translateY(-4px);
+}
 
 
     

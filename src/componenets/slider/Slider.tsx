@@ -29,6 +29,7 @@ const StyledSlider = styled.div`
 `
 const Slide = styled.div`
     text-align: center;
+    margin: 60px;
 `
 
 const Text = styled.p`
@@ -51,6 +52,7 @@ const Pagination = styled.div`
         height: 10px;
         background-color: rgba(255, 255, 255, 0.5);
         border-radius: 20px;
+
 
     & + span {
         margin-left: 5px;
