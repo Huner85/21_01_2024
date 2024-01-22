@@ -30,8 +30,8 @@ ul {
 }
 
 button {
-    background-color: unset;
-    border: none;
+    color: white;
+    background-color: black;
 }
 section {
     padding: 100px 0;
