@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { theme } from "../../../styles/Theme";
+import { Link, ListItem, Mask } from "../headerMenu/HeaderMenu";
 
 
 
@@ -15,16 +16,17 @@ export const MobileMenu = (props: {menuItems: Array<string>}) => {
             <ul>
                 {props.menuItems.map((item :string, index: number)=>{
                 return <ListItem key={index}>
-                    <Link href="">
-                        {item}
-                        <Mask>
-                            <span>{item}</span>
-                        </Mask>
-                         <Mask>
-                            <span>{item}</span>
-                        </Mask>
-                    </Link>
-                </ListItem>
+                <Link href="">
+                    {item}
+                    <Mask>
+                        <span>{item}</span>
+                    </Mask>
+                     <Mask>
+                        <span>{item}</span>
+                    </Mask>
+                </Link>
+            </ListItem>
+
                 })}
                 </ul>
             </MobileMenuWrapper>
@@ -35,10 +37,10 @@ export const MobileMenu = (props: {menuItems: Array<string>}) => {
 
 const StyledMobileMenu = styled.nav`
     display: none;
-}
-@media ${theme.media.tablet} {
-    display: block;
-}
+
+    @media ${theme.media.tablet} {
+        /* display: block; */
+    }
 `
 const MobileMenuWrapper = styled.div<{isOpen: boolean}>`
     position: fixed;
@@ -62,6 +64,7 @@ const MobileMenuWrapper = styled.div<{isOpen: boolean}>`
         justify-content: center;
         align-items: center;
         flex-direction: column;
+  }
 `
 
 const BurgerButton = styled.button<{isOpen: boolean}>`
@@ -113,38 +116,5 @@ const BurgerButton = styled.button<{isOpen: boolean}>`
     ` } 
     }
 
-`
-export const ListItem = styled.li`
-position: relative;
-
-&:hover {
-    /* &{Mask} {
-        transform: skewX(12deg); translateX(5px);
-    } */
-}
-`
-
-export const Link = styled.a`
-font-family: sans-serif;
-font-weight: 400;
-font-size: 30px;
-text-align: center;
-`
-const Mask = styled.span`
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: inline-block;
-    height: 50%;
-    overflow-y: hidden;
-    /* outline: 1px solid red; */
-    color: ${theme.colors.accent};
-    & + & {
-        top: 50%;
-        span {
-            display: inline-block;
-            transform: translateY(-50%);
-        }
-    }
 `
 

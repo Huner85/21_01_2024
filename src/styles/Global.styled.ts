@@ -17,6 +17,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osk-font-smoothing: grayscale;
     color: ${theme.colors.font};
+    line-height: 1.2;
   
 }
 
@@ -30,8 +31,11 @@ ul {
 }
 
 button {
-    color: white;
-    background-color: black;
+background-color: unset;
+border: none;
+cursor: pointer;
+color: ${theme.colors.font};
+
 }
 section {
     padding: 100px 0;

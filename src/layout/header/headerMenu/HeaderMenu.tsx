@@ -38,23 +38,16 @@ ul {
     display: none;
 }
 `
-export const ListItem = styled.li`
-position: relative;
 
-&:hover {
-    /* &{Mask} {
-        transform: skewX(12deg); translateX(5px);
-    } */
-}
-`
 
 export const Link = styled.a`
 font-family: sans-serif;
 font-weight: 400;
 font-size: 30px;
 text-align: center;
+color: transparent;
 `
-const Mask = styled.span`
+export const Mask = styled.span`
     position: absolute;
     top: 0;
     left: 0;
@@ -63,6 +56,7 @@ const Mask = styled.span`
     overflow-y: hidden;
     /* outline: 1px solid red; */
     color: ${theme.colors.accent};
+
     & + & {
         top: 50%;
         span {
@@ -72,3 +66,37 @@ const Mask = styled.span`
     }
 `
 
+export const ListItem = styled.li`
+position: relative;
+
+&::before {
+    content: "";
+    display: inline-block;
+    height: 3px;
+    background-color: ${theme.colors.accent};
+
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    right: -10px;
+    z-index: 1;
+
+    transform: scale(0);
+}
+
+&:hover::before {
+    transform: scale(1);
+}
+
+&:hover {
+    ${Mask} {
+        transform: skewX(12deg) translateX(5px);
+        color: ${theme.colors.font};
+
+        & + ${Mask} {
+        transform: skewX(12deg) translateX(-5px); 
+    }
+    
+    }
+}
+`

@@ -8,6 +8,7 @@ export const LinkComponent = styled.a`
     letter-spacing: 1px;
     text-transform: uppercase;
     padding: 10px;
+    white-space: nowrap;
 
     &:hover {
         &::before {

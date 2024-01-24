@@ -14,7 +14,7 @@ export const Contact = () => {
                 <Field placeholder={'name'}/>
                 <Field placeholder={'subject'}/>
                 <Field placeholder={'message'} as={"textarea"}/>
-                <Button type={'submit'}>Send message</Button>
+                <Button type={'submit'}><span>Send message</span></Button>
             </StyledForm>
             </Container>
         </StyledContacts>
@@ -48,6 +48,20 @@ const Field = styled.input`
     letter-spacing: 0.05em;
 
     color: ${theme.colors.font};
+
+span{
+    position: relative;
+    ::before {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: 10px;
+        background-color: ${theme.colors.accent};
+
+        position: absolute;
+        bottom: 0;
+    }
+}
 
     &::placeholder {
         color: ${theme.colors.placeholderColor};
